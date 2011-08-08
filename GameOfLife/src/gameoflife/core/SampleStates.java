@@ -1,11 +1,13 @@
 package gameoflife.core;
 
+import java.util.Random;
+
 public class SampleStates {
 	
 	public static boolean[][] getFreshState(){
 		boolean[][] state = new boolean[Globals.MAX_X][Globals.MAX_Y];
 		for(int i=0;i<Globals.MAX_X;i++){
-			state[i] = new boolean[Globals.MAX_X];
+			state[i] = new boolean[Globals.MAX_Y];
 			for(int j=0;j<Globals.MAX_Y;j++){
 				state[i][j] = false;
 			}
@@ -48,6 +50,18 @@ public class SampleStates {
 		state[2][2] = true;
 		state[2][3] = true;
 		state[2][4] = true;
+		return state;
+	}
+
+	public static boolean[][] randomPattern() {
+		Random r = new Random();
+		boolean[][] state = new boolean[Globals.MAX_X][Globals.MAX_Y];
+		for(int i=0;i<Globals.MAX_X;i++){
+			state[i] = new boolean[Globals.MAX_Y];
+			for(int j=0;j<Globals.MAX_Y;j++){
+				state[i][j] = r.nextBoolean();
+			}
+		}
 		return state;
 	}
 }
