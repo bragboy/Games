@@ -1,4 +1,4 @@
-package gameoflife.core.tests;
+package gameoflife.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
